@@ -1,12 +1,13 @@
+// server.js
 const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send('Hello, Dockerized World!');
-});
+// Serve static files from the "public" directory
+app.use(express.static('public'));
 
+// Start the server
 app.listen(port, () => {
-    console.log(`App is running on http://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });
 
